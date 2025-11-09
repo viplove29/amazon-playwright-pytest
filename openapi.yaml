@@ -1,0 +1,24 @@
+openapi: 3.0.1
+info:
+  title: Playwright Test MCP API
+  version: 1.0.0
+paths:
+  /mcp:
+    post:
+      summary: Run or manage tests
+      description: Execute Pytest-based automation via structured JSON commands.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                action:
+                  type: string
+                  example: run_test
+                args:
+                  type: object
+      responses:
+        "200":
+          description: Successful result

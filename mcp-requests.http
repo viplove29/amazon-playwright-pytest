@@ -1,0 +1,22 @@
+### Run Amazon search test
+POST http://127.0.0.1:5000/mcp
+Content-Type: application/json
+
+{
+  "action": "run_test",
+  "args": { "test": "tests/test_amazon_search.py" }
+}
+
+### Create a generated test
+POST http://127.0.0.1:5000/mcp
+Content-Type: application/json
+
+{
+  "action": "create_test",
+  "args": {
+    "name": "test_search_camera",
+    "steps": [
+      {"action": "search", "value": "camera"}
+    ]
+  }
+}
